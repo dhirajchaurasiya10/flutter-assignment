@@ -85,16 +85,8 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              child: TextFormField(
-                  decoration: InputDecoration(
-                      label: Text("  Find your product"),
-                      border: InputBorder.none,
-                      prefixIcon: Icon(
-                        Icons.search,
-                        size: 30,
-                        color: Colors.grey,
-                      ))),
+            SizedBox(
+              height: 20,
             ),
             Container(
               child: CarouselSlider(
@@ -106,6 +98,32 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
                 items: imageSliders,
               ),
             ),
+            SizedBox(height: 20),
+            Text(
+              "All",
+              style: TextStyle(
+                  color: Colors.red, fontWeight: FontWeight.w600, fontSize: 30),
+            ),
+            SizedBox(height: 20),
+            Container(
+                // margin: EdgeInsets.all(8),
+                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+                // decoration: BoxDecoration(
+                //   color: Colors.red,
+                //   borderRadius: BorderRadius.circular(18),
+                // ),
+                child: SingleChildScrollView(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "images/routine.png",
+                    fit: BoxFit.cover,
+                    height: 100,
+                  ),
+                ],
+              ),
+            )),
           ],
         ),
       ),
