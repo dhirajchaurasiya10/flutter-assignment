@@ -4,10 +4,28 @@ Online Store is an ecommerce app.
 
 Few snaps of different sections of this app are kept along with this file.
 
+Technologies Used in this project:
+Flutter
+
+
+Guiding sources:
+pub.dev
+
+Running this App:
+ This app can be run by simply downloading it's zip file or by cloning.
+
 
 ![Screenshot_1688808573](https://github.com/dhirajchaurasiya10/flutter-assignment/assets/106879418/4132d1c4-f24a-498b-b1e1-2851aeb3e834)
 ![Uploading Sc![Screenshot_1688808592](https://github.com/dhirajchaurasiya10/flutter-assignment/assets/106879418/38db5efb-f5ca-493e-9668-01d33cb382d4)
 reenshot_1688808579.png…]()
+
+
+
+
+
+
+
+
 
 
 
