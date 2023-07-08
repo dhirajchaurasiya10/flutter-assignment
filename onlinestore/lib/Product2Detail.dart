@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+class Product2Detail extends StatelessWidget {
+  const Product2Detail({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class ProductDetail extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "A paragraph to describe about the product",
+                  "A paragrapg to describe about the product",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(height: 20),
