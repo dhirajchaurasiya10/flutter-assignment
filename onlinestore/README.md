@@ -1,5 +1,9 @@
 # onlinestore
 
+Online Store is an ecommerce app.
+
+Few snaps of different sections of this app are kept along with this file.
+
 A new Flutter project.
 
 ## Getting Started
