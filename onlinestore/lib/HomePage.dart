@@ -1,7 +1,11 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'ItemCard.dart';
+import 'ProductDetail.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -83,8 +87,21 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
                 color: Color(0xFFFD725A), fontWeight: FontWeight.bold),
           )),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+                decoration: InputDecoration(
+                    label: Text(" Find your product"),
+                    border: InputBorder.none,
+                    prefixIcon: Icon(
+                      Icons.search,
+                      size: 30,
+                      color: Colors.grey,
+                    ))),
             SizedBox(
               height: 20,
             ),
@@ -99,31 +116,55 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
               ),
             ),
             SizedBox(height: 20),
-            Text(
-              "All",
-              style: TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.w600, fontSize: 30),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Black T-shirt",
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 30,
+                ),
+              ),
             ),
             SizedBox(height: 20),
             Container(
-                // margin: EdgeInsets.all(8),
-                // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
-                // decoration: BoxDecoration(
-                //   color: Colors.red,
-                //   borderRadius: BorderRadius.circular(18),
-                // ),
-                child: SingleChildScrollView(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    "images/routine.png",
-                    fit: BoxFit.cover,
-                    height: 100,
-                  ),
-                ],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Image.asset(
+                    //   "images/routine.png",
+                    //   fit: BoxFit.cover,
+                    //   height: 100,
+                    // ),
+                    // Container(
+                    //   child: GridView.builder(
+                    //       gridDelegate:
+                    //           SliverGridDelegateWithMaxCrossAxisExtent(
+                    //               maxCrossAxisExtent: 250,
+                    //               childAspectRatio: 2,
+                    //               crossAxisSpacing: 10),
+                    //       itemBuilder: (context, index) => productcard()),
+                    // )
+                    productcard(),
+                    SizedBox(width: 20),
+                    productcard(),
+                    SizedBox(width: 20),
+                    productcard()
+                  ],
+                ),
               ),
-            )),
+            ),
+            // Expanded(
+            //     child: GridView.builder(
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 2,
+            //     childAspectRatio: 0.5,
+            //   ),
+            //   itemBuilder: (context, index) => ItemCard(),
+            // )),
           ],
         ),
       ),
@@ -135,12 +176,12 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.favorite,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_none),
+            icon: Icon(CupertinoIcons.cart),
             label: "",
           ),
           BottomNavigationBarItem(
@@ -152,6 +193,33 @@ class _ButtomNavgtState extends State<ButtomNavgt> {
         selectedItemColor: Color(0xFFFD725A),
         unselectedItemColor: Colors.grey,
         onTap: onTaps,
+      ),
+    );
+  }
+}
+
+class productcard extends StatelessWidget {
+  const productcard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      height: 180,
+      width: 160,
+      decoration: BoxDecoration(
+          color: Color.fromARGB(255, 81, 129, 168),
+          borderRadius: BorderRadius.circular(16)),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ProductDetail()));
+        },
+        child: Image.asset(
+          "images/Black T-Shirt.png",
+        ),
       ),
     );
   }
